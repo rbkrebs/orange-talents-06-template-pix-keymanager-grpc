@@ -10,14 +10,39 @@ package br.com.edu.zup;
 service KeyManagerService {
 
 
-  rpc registraChavePix(SolicitacaoRequest) returns (SolicitacaoResponse) {}
+  rpc registraChavePix (SolicitacaoRequest) returns (SolicitacaoResponse) {}
 
+  rpc consultaIdentificadorCliente (IdentificadorRequest) returns (IdentificadorResponse) {}
+
+}
+
+enum TipoChave {
+  CPF = 0;
+  TELEFONE_CELULAR = 1;
+  EMAIL = 2;
+  CHAVE_ALEATORIA = 3;
+}
+
+enum TipoConta {
+  POUPANCA = 0;
+  CORRENTE = 1;
 }
 
 message SolicitacaoRequest {
-  string solicita = 1;
+  string codigoInterno = 1;
+  TipoChave tipoChave = 2;
+  string valorChave = 3;
+  TipoConta tipoConta = 4;
 }
 
 message SolicitacaoResponse {
-  string solicita = 1;
+  string codigoInterno = 1;
+}
+
+message IdentificadorRequest {
+  string idCliente = 1;
+}
+
+message IdentificadorResponse {
+  string idCliente = 1;
 }

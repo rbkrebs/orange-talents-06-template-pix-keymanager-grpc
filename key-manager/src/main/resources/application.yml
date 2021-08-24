@@ -1,3 +1,17 @@
 micronaut:
   application:
     name: keyManager
+
+datasources:
+  default:
+    url: ${MYSQL_URL:`jdbc:mysql://localhost/pix`}
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: ${MYSQL_USER:romulo}
+    password: ${MYSQL_PASSWORD:romulo}
+
+jpa:
+  default:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
