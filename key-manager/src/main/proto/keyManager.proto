@@ -1,9 +1,8 @@
 syntax = "proto3";
 
 option java_multiple_files = true;
-option java_package = "br.com.edu.zup";
+option java_package = "br.com.edu.zup.grpc";
 option java_outer_classname = "KeyManager";
-option objc_class_prefix = "HLW";
 
 package br.com.edu.zup;
 
@@ -12,11 +11,9 @@ service KeyManagerService {
 
   rpc registraChavePix (SolicitacaoRequest) returns (SolicitacaoResponse) {}
 
-  rpc consultaIdentificadorCliente (IdentificadorRequest) returns (IdentificadorResponse) {}
-
 }
 
-enum TipoChave {
+enum TipoDeChave {
 
   DESCONHECIDO_TIPOCHAVE = 0;
   CPF = 1;
@@ -26,20 +23,20 @@ enum TipoChave {
 
 }
 
-enum TipoConta {
+enum TipoDeConta {
 
   DESCONHECIDO_TIPOCONTA = 0;
-  POUPANCA = 1;
-  CORRENTE = 2;
+  CONTA_POUPANCA = 1;
+  CONTA_CORRENTE = 2;
 
 }
 
 message SolicitacaoRequest {
 
   string codigoInterno = 1;
-  TipoChave tipoChave = 2;
+  TipoDeChave tipoChave = 2;
   string valorChave = 3;
-  TipoConta tipoConta = 4;
+  TipoDeConta tipoConta = 4;
 
 }
 

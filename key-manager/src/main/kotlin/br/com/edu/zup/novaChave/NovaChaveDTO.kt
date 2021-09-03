@@ -12,9 +12,9 @@ import javax.validation.constraints.Size
 
 @ValidChavePix
 @Introspected
-data class NovaChaveDTO(@field:NotBlank @field:ValidUUID val clienteId: String?,
+data class NovaChaveDTO(@field:NotBlank @field:ValidUUID val clienteId: String,
                         @field:NotNull val tipoChave: TipoChave?,
-                        @field:Size(max = 77) val valorChave: String?,
+                        @field:Size(max = 77) val valorChave: String,
                         @field: NotNull val tipoConta: TipoConta?) {
 
 

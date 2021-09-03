@@ -9,6 +9,5 @@ import kotlin.annotation.AnnotationTarget.*
 @Retention(AnnotationRetention.RUNTIME)
 @Target(CLASS, FILE, FUNCTION, PROPERTY_GETTER, PROPERTY_SETTER)
 @Around
-@Type(ExceptionHandlerInterceptor::class)
 annotation class ErrorHandler()
 

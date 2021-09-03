@@ -18,7 +18,7 @@ import kotlin.annotation.AnnotationTarget.TYPE
 @Constraint(validatedBy = [ValidPixKeyValidator::class])
 annotation class ValidChavePix(
 
-    val message: String = "chave Pix inválida (\${validatedValue.tipo})",
+    val message: String = "chave Pix inválida",
     val groups: Array<KClass<Any>> = [],
     val payload: Array<KClass<Payload>> = [],
 
